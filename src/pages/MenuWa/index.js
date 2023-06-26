@@ -73,6 +73,7 @@ export default function MenuWa({ navigation, route }) {
                             let urlWA = 'https://wa.me/' + comp.tlp + `?text=Saya mau ${route.params.menu} Mengenai *${i.menu}*`;
 
                             Linking.openURL(urlWA)
+                            console.log(urlWA)
 
                         }}>
                             <View style={{

@@ -42,7 +42,8 @@ export default function ProdukKategori({ navigation, route }) {
     return (
         <SafeAreaView style={{
             flex: 1,
-            backgroundColor: colors.white
+            backgroundColor: colors.white,
+
         }}>
             <MyHeader />
             <Text style={{
@@ -87,7 +88,7 @@ export default function ProdukKategori({ navigation, route }) {
 
                     )
                 })}
-
+                <MyGap jarak={20} />
             </ScrollView>
         </SafeAreaView>
     )

@@ -145,7 +145,7 @@ export default function Home({ navigation, route }) {
             menu: 'Pembelian Obat'
           })} label="Pembelian Obat" img={require('../../assets/a1.png')} />
           <MydetailMenu onPress={() => navigation.navigate('MenuWa', {
-            menu: 'Diet & Pola Makan',
+            menu: 'Diet dan Pola Makan',
             modul: 'diet'
           })} label="Diet & Pola Makan" img={require('../../assets/a2.png')} />
           <MydetailMenu onPress={() => navigation.navigate('MenuWa', {
@@ -190,9 +190,9 @@ export default function Home({ navigation, route }) {
             menu: 'Mom & Babycare',
             modul: 'mombabycare'
           })} label="Mom & Babycare" img={require('../../assets/a8.png')} />
-          <MydetailMenu onPress={() => navigation.navigate('MenuWa', {
-            menu: 'Perawatan Baby Baru Lahir',
-            modul: 'babycare'
+          <MydetailMenu onPress={() => navigation.navigate('Produk', {
+            id: 12,
+            nama_kategori: 'Perawatan Bayi Baru Lahir'
           })} label="Perawatan Baby Baru Lahir" img={require('../../assets/a9.png')} />
         </View>
       </View>
