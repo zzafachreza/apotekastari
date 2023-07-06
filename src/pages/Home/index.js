@@ -164,12 +164,12 @@ export default function Home({ navigation, route }) {
         }}>
 
           <MydetailMenu onPress={() => navigation.navigate('Dokter', {
-            menu: 'Curhat Dokter'
-          })} label="Curhat Dokter" img={require('../../assets/a4.png')} />
+            menu: 'Konsultasi Dokter'
+          })} label="Konsultasi Dokter" img={require('../../assets/a4.png')} />
           <MydetailMenu onPress={() => navigation.navigate('MenuWa', {
-            menu: 'Hipnoterapist',
+            menu: 'Hipnoterapi',
             modul: 'hipnoterapist'
-          })} label="Hipnoterapist" img={require('../../assets/a5.png')} />
+          })} label="Hipnoterapi" img={require('../../assets/a5.png')} />
           <MydetailMenu onPress={() => navigation.navigate('MenuWa', {
             menu: 'Homecare Diabetes',
             modul: 'homecare'
@@ -187,9 +187,9 @@ export default function Home({ navigation, route }) {
             modul: 'minum'
           })} label="Pendampingan Minum Obat" img={require('../../assets/a7.png')} />
           <MydetailMenu onPress={() => navigation.navigate('MenuWa', {
-            menu: 'Mom & Babycare',
+            menu: 'Hipnokhitan',
             modul: 'mombabycare'
-          })} label="Mom & Babycare" img={require('../../assets/a8.png')} />
+          })} label="Hipnokhitan" img={require('../../assets/a8.png')} />
           <MydetailMenu onPress={() => navigation.navigate('Produk', {
             id: 12,
             nama_kategori: 'Perawatan Bayi Baru Lahir'
