@@ -70,7 +70,13 @@ export default function MenuWa({ navigation, route }) {
 
                     return (
                         <TouchableWithoutFeedback onPress={() => {
-                            let urlWA = 'https://wa.me/' + comp.tlp + `?text=Saya mau ${route.params.menu} Mengenai *${i.menu}*`;
+                            let urlWA = ''
+                            if (route.params.menu == 'Diet dan Pola Makan') {
+                                urlWA = 'https://wa.me/' + comp.tlp + `?text=Saya mau konsultasi pola makan`;
+                            } else {
+                                urlWA = 'https://wa.me/' + comp.tlp + `?text=Saya mau ${route.params.menu} Mengenai *${i.menu}*`;
+                            }
+
 
                             Linking.openURL(urlWA)
                             console.log(urlWA)

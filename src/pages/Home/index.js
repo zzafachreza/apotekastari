@@ -1,4 +1,4 @@
-import { Alert, StyleSheet, Text, View, Image, FlatList, ActivityIndicator, Dimensions, ImageBackground, TouchableWithoutFeedback } from 'react-native'
+import { Alert, StyleSheet, Text, View, Image, FlatList, ActivityIndicator, Dimensions, ImageBackground, TouchableWithoutFeedback, Linking } from 'react-native'
 import React, { useState, useEffect, useRef } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { apiURL, getData, MYAPP, storeData } from '../../utils/localStorage';
@@ -63,6 +63,7 @@ export default function Home({ navigation, route }) {
   const isFocus = useIsFocused();
   const [data, setData] = useState([]);
   const [open, setOpen] = useState(false);
+  const [comp, setComp] = useState({});
 
   const __getProduk = async () => {
 
@@ -71,8 +72,13 @@ export default function Home({ navigation, route }) {
     })
 
     await axios.post(apiURL + 'produk').then(res => {
-      console.log(res.data);
+
       setData(res.data);
+    });
+    await axios.post(apiURL + 'company').then(res => {
+      console.log(res.data);
+      setComp(res.data.data);
+
     });
   }
 
@@ -190,10 +196,13 @@ export default function Home({ navigation, route }) {
             menu: 'Hipnokhitan',
             modul: 'mombabycare'
           })} label="Hipnokhitan" img={require('../../assets/a8.png')} />
-          <MydetailMenu onPress={() => navigation.navigate('Produk', {
-            id: 12,
-            nama_kategori: 'Perawatan Bayi Baru Lahir'
-          })} label="Perawatan Baby Baru Lahir" img={require('../../assets/a9.png')} />
+          <MydetailMenu onPress={() => {
+            let urlWA = 'https://wa.me/' + comp.tlp + `?text=Saya mau *Layanan Pesan Antar*`;
+
+            Linking.openURL(urlWA)
+            console.log(urlWA)
+
+          }} label="Layanan Pesan Antar" img={require('../../assets/a9.png')} />
         </View>
       </View>
     </SafeAreaView>
